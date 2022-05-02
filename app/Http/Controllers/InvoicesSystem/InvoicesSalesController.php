@@ -34,9 +34,11 @@ class InvoicesSalesController extends Controller
         $field  = $request->field;
         $order  = $request->order;
 
-        $invoices = InvoiceSales::orderBy($field, $order)
-        ->where('name','like','%'.$request['search'].'%')
-        ->orwhere('consecutive_invoice','like','%'.$request['search'].'%')
+
+
+        $invoices = InvoiceSale::orderBy($field, $order)
+        ->where('number_invoice','like','%'.$request['search'].'%')
+        ->orwhere('number_invoice','like','%'.$request['search'].'%')
         ->paginate($show);
 
         return [
@@ -48,7 +50,7 @@ class InvoicesSalesController extends Controller
                 'from'          => $invoices->firstItem(),
                 'to'            => $invoices->lastPage()
             ],
-            'invoicess' => $invoices,
+            'invoices' => $invoices,
         ];
     }
 
