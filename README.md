@@ -12,13 +12,6 @@ _Cargar dependencias de composer_
 composer install
 ```
 
-_Crear link simbolico_
-
-```
-php artisan storage:link
-```
-
-
 _Crear archivo .env_
 
 ```
