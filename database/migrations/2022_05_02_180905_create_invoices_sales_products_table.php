@@ -20,6 +20,7 @@ class CreateInvoicesSalesProductsTable extends Migration
             $table->foreignId('products_id')->references('id')->on('products');
             $table->integer('cant');
             $table->integer('value_unitary');
+            $table->integer('iva')->default(19);
             $table->integer('value_total');
 
             $table->timestamps();

@@ -28,6 +28,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::apiResource('invoices',          InvoicesController::class);
     Route::apiResource('invoices-sales',    InvoicesSalesController::class);
     Route::post('invoices-sales-pagination',[InvoicesSalesController::class, 'pagination']);
+    Route::get('provider/{id}',             [InvoicesSalesController::class, 'getProvider']);
 
     Route::post('test',                     [InvoiceController::class, 'test']);
 

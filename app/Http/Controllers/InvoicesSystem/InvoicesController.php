@@ -194,11 +194,7 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-
-        $consecutivo=Invoice::all()
-        ->limit(1);
-
-        return $consecutivo;
+        
     }
 
 

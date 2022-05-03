@@ -16,7 +16,8 @@ class InvoiceSaleProduct extends Model
         'products_id',
         'cant', 
         'value_unitary',
-        'value_total'
+        'value_total',
+        'iva'
     ];
     
 }
