@@ -20,11 +20,12 @@ use App\Http\Controllers\InvoicesSystem\InvoicesSalesController;
 
 Route::post('register',     [UserController::class, 'register']);
 Route::post('login',        [UserController::class, 'authenticate']); 
+Route::get('get-user-auth', [UserController::class, 'getAuthenticatedUser']);
+Route::post('logout-api',    [UserController::class, 'logout']);
 
 Route::group(['middleware' => ['jwt.verify']], function() {
 
     Route::apiResource('invoices',          InvoicesController::class);
-
     Route::apiResource('invoices-sales',    InvoicesSalesController::class);
     Route::post('invoices-sales-pagination',[InvoicesSalesController::class, 'pagination']);
 
